@@ -6,20 +6,50 @@
 		content="The very cool website for Jón Salenger, some would even describe it as PogChamp" />
 </svelte:head>
 
-<main>
-	<h1>Jón Salenger</h1>
-	<p>I make cool things like this green blob</p>
+<script>
+	let projects = false;
+</script>
 
-	<svg style="overflow:hidden;" class="svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-		<path fill="#24A148" d="M50,-43.3C61.8,-38.1,66.4,-19.1,61.5,-4.9C56.5,9.2,42.1,18.4,30.2,33.6C18.4,48.8,9.2,70,-2.8,72.8C-14.7,75.6,-29.5,59.9,-42.2,44.7C-54.9,29.5,-65.7,14.7,-61.5,4.2C-57.3,-6.4,-38.3,-12.8,-25.5,-18C-12.8,-23.2,-6.4,-27.1,6.3,-33.5C19.1,-39.8,38.1,-48.5,50,-43.3Z" transform="translate(100 100)" />
-	</svg>
+<main>
+	
+	<button class="bar" on:click={e => projects = !projects}>
+		<p>PROJECTS</p>
+	</button>
+	<h1 class="center">Jón Salenger</h1>
+	<p class="center">I make cool things like this green blob</p>
+
+	{#if projects}
+		<div class="container">
+			<br>
+			<p>I do not do anything cool besides the green blob, the above text is a lie</p>
+		</div>
+	{:else}
+		<svg style="overflow:hidden;" class="svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+			<path fill="#24A148" d="M50,-43.3C61.8,-38.1,66.4,-19.1,61.5,-4.9C56.5,9.2,42.1,18.4,30.2,33.6C18.4,48.8,9.2,70,-2.8,72.8C-14.7,75.6,-29.5,59.9,-42.2,44.7C-54.9,29.5,-65.7,14.7,-61.5,4.2C-57.3,-6.4,-38.3,-12.8,-25.5,-18C-12.8,-23.2,-6.4,-27.1,6.3,-33.5C19.1,-39.8,38.1,-48.5,50,-43.3Z" transform="translate(100 100)" />
+		</svg>
+	{/if}
 </main>
 
 <style>
 	main {
 		margin: auto;
-		text-align: center;
 		max-width: 240px;
+	}
+
+	.container {
+		margin-left: 10%;
+		margin-right: 10%;
+	}
+
+	.center {
+		text-align: center;
+	}
+
+	.bar { 
+		visibility: visible;
+		opacity: 0.7;
+		margin-left: 10rem;
+		border: none;
 	}
 
 	p {
@@ -35,12 +65,16 @@
 	
 	.svg {
 		max-width: 100%;
+		display: block;
+		margin: auto;
 	}
 
 	@media (min-width: 640px) {
 		main {
 			max-width: none;
 		}
+
+
 
 		p {
 			font-size: 1.5rem;

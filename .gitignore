@@ -1,4 +1,6 @@
+# Node
 /node_modules/
 /public/build/
 
+# Mac OS
 .DS_Store

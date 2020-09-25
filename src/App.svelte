@@ -13,7 +13,7 @@
 <main>
 	
 	<button class="bar" on:click={e => projects = !projects}>
-		<p>PROJECTS</p>
+		<p>{projects ? 'BLOB' : 'PROJECTS'}</p>
 	</button>
 	<h1 class="center">Jón Salenger</h1>
 	<p class="center">I make cool things like this green blob</p>

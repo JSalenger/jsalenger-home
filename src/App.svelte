@@ -21,7 +21,7 @@
 	{#if projects}
 		<div class="container">
 			<br>
-			<p>I do not do anything cool besides the green blob, the above text is a lie</p>
+			<p>Notin' here rn</p>
 		</div>
 	{:else}
 		<svg style="overflow:hidden;" class="svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
